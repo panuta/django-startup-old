@@ -13,7 +13,7 @@ from __future__ import absolute_import, unicode_literals
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
-APPS_DIR = ROOT_DIR.path('cac')
+APPS_DIR = ROOT_DIR.path('{{cookiecutter.repo_name}}')
 
 env = environ.Env()
 
@@ -43,7 +43,7 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'cac.users',  # custom users app
+    '{{cookiecutter.repo_name}}.users',  # custom users app
     # Your stuff: custom apps go here
 )
 
@@ -65,7 +65,7 @@ MIDDLEWARE_CLASSES = (
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': 'cac.contrib.sites.migrations'
+    'sites': '{{cookiecutter.repo_name}}.contrib.sites.migrations'
 }
 
 # DEBUG
@@ -99,7 +99,7 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres://localhost/cac"),
+    'default': env.db("DATABASE_URL", default="postgres://localhost/{{cookiecutter.repo_name}}"),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
