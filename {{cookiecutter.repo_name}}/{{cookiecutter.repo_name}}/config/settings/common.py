@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Django settings for cac project.
+Django settings for {{cookiecutter.repo_name}} project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
