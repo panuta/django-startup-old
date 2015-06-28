@@ -10,23 +10,36 @@ Local settings
 
 from .common import *  # noqa
 
+# DATABASE CONFIGURATION
+# ------------------------------------------------------------------------------
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '{{ cookiecutter.db_name }}',
+        'USER': '{{ cookiecutter.db_user }}',
+        'PASSWORD': '{{ cookiecutter.db_password }}',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = env.bool('DJANGO_DEBUG', default=True)
+DEBUG = True
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY", default='CHANGEME!!!')
+SECRET_KEY = 'THIS_KEY_IS_USED_IN_DEVELOPMENT_MODE_ONLY'
 
 # Mail settings
 # ------------------------------------------------------------------------------
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
-                    default='django.core.mail.backends.console.EmailBackend')
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # CACHING
 # ------------------------------------------------------------------------------
@@ -50,10 +63,6 @@ DEBUG_TOOLBAR_CONFIG = {
     ],
     'SHOW_TEMPLATE_CONTEXT': True,
 }
-
-# django-extensions
-# ------------------------------------------------------------------------------
-INSTALLED_APPS += ('django_extensions', )
 
 # TESTING
 # ------------------------------------------------------------------------------

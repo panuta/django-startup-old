@@ -1,9 +1,12 @@
 {
     "project_name": "project_name",
     "repo_name": "{{ cookiecutter.project_name|replace(' ', '_') }}",
-    "author_name": "Your Name",
-    "email": "Your email",
     "domain_name": "example.com",
-    "version": "0.1.0",
-    "timezone": "UTC"
+    "admin_name": "Opendream Support",
+    "admin_email": "support@opendream.co.th",
+    "timezone": "UTC",
+    "language_code": "en-us",
+    "db_name": "{{ cookiecutter.project_name|replace(' ', '_') }}",
+    "db_user": "{{ cookiecutter.project_name|replace(' ', '_') }}",
+    "db_password": "1q2w3e4r"
 }

@@ -9,4 +9,5 @@
 === Setup Project on Production ===
 
 * Install requirements
-
+* Set Environment Variables
+* Set DJANGO_SETTINGS_MODULE to "config.settings.production"
