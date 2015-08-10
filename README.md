@@ -1,6 +1,6 @@
 Django Startup
 
-=== How to Start a New Project ===
+=== How to start a new project ===
 
 * STEP 1 - If you haven't installed 'cookiecutter', install it by
 
@@ -14,7 +14,7 @@ $ pip install cookiecutter
 $ cookiecutter https://github.com/panuta/django-startup.git
 ```
 
-
+* STEP 3 - Follow questions asked by cookiecutter
 
 
 === TODO ===
